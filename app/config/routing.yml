@@ -1,0 +1,11 @@
+main:
+    resource: "@MainBundle/Resources/config/routing/test.xml"
+    prefix:   /
+
+
+fc_user:
+    resource: "@UserBundle/Resources/config/routing/user.xml"
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation

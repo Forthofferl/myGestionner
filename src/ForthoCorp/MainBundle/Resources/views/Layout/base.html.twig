@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+    {% include "MainBundle:LayoutComponents:meta.html.twig" %}
+    {% include "MainBundle:LayoutComponents:core_stylesheet.html.twig" %}
+    {% include "MainBundle:LayoutComponents:themeStylesheet.html.twig" %}
+    {% block pageStylesheet %}{% endblock %}
+</head>
+<body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid page-content-white page-md">
+    {% include "MainBundle:LayoutComponents:header.html.twig" %}
+    <div class="clearfix"> </div>
+    <div class="page-container">
+        {% include "MainBundle:LayoutComponents:sidebar.html.twig" %}
+        {% include "MainBundle:LayoutComponents:flashbag_message.html.twig" %}
+        <div class="page-content-wrapper">
+            <!-- BEGIN CONTENT BODY -->
+            <div class="page-content">
+                <div class="page-bar">
+                    <ul class="page-breadcrumb">
+                        <li>
+                           {# <a href="{% if app.user.hasRole('ROLE_ADMIN') %}{{ path('admin_dashboard') }}{% elseif app.user.hasRole('ROLE_PARTNER') %}{{ path('partner_dashboard') }}{% endif %}">Tableau de bord</a>
+                            {% if page is defined and page != "dashboard" %}<i class="fa fa-circle"></i>{% endif %}#}
+                        </li>
+                        {% block breadcrumb %}{% endblock %}
+                    </ul>
+                </div>
+                {% block pageContent %}{% endblock %}
+            </div>
+        </div>
+        <!-- END FOOTER -->
+    </div>
+    <div class="page-footer">
+        <div class="page-footer-inner">
+            {{ "now"|date('Y') }} &copy; <a href="http://www.groupeForthoCorp.fr/">MyGestionner</a>
+        </div>
+        <span style="font-size: 10px; float: right;"><a href="{{ path('api_documentation_index') }}">API Développeur</a></span>
+        <div class="scroll-to-top">
+            <i class="icon-arrow-up"></i>
+        </div>
+    </div>
+    {% block modal %}{% endblock %}
+</body>
+
+{% include "MainBundle:LayoutComponents:core_javascript.html.twig" %}
+{% include "MainBundle:LayoutComponents:gmaps_javascript.html.twig" %}
+<script>
+    jQuery(document).ready(function() {
+        {#ForthoCorp.init();
+        {% if notifications is defined %}
+            {% for notification in notifications %}
+                Flot.doToastr("{{ notification.type }}", "{{ notification.title }}", "{{ notification.message }}");
+            {% endfor %}
+        {% endif %}#}
+    });
+</script>
+{% block pageJavascript %}{% endblock %}
+{% block bottomJavascript %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,7 @@
+<li class="nav-item start {% if page=="dashboard" %}active{% endif %} open">
+        <a href="{{ path('partner_dashboard') }}" class="nav-link nav-toggle">
+        <i class="fa fa-dashboard"></i>
+        <span class="title">Tableau de bord</span>
+        {% if page=="dashboard" %}<span class="selected "></span>{% endif %}
+    </a>
+</li>

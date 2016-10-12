@@ -1,0 +1,11 @@
+{% block file_row %}
+    {% spaceless %}
+        <div class="form-group">
+            {{ form_errors(form) }}
+            <div class="col-md-9">
+                {% set type = type|default('text') %}
+                <input type="{{ type }}" class="btn" {{ block('widget_attributes') }} />
+            </div>
+        </div>
+    {% endspaceless %}
+{% endblock file_row %}

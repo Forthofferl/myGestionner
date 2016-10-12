@@ -1,0 +1,101 @@
+<li class="nav-item start {% if page=="dashboard" %}active{% endif %} open">
+        <a href="{{ path('admin_dashboard') }}" class="nav-link nav-toggle">
+        <i class="fa fa-dashboard"></i>
+        <span class="title">Tableau de bord</span>
+        {% if page=="dashboard" %}<span class="selected "></span>{% endif %}
+    </a>
+</li>
+<li class="nav-item {% if page=="program" %}active{% endif %}">
+    <a href="{{ path('programs') }}" class="nav-link nav-toggle">
+        <i class="fa fa-building-o"></i>
+        <span class="title">Programmes</span>
+        {% if page=="program" %}<span class="selected "></span>{% endif %}
+    </a>
+</li>
+<li class="nav-item {% if page=="lot" %}active{% endif %}">
+    <a href="{{ path('lots') }}" class="nav-link nav-toggle">
+        <i class="fa fa-home"></i>
+        <span class="title">Lots</span>
+        {% if page=="lot" %}<span class="selected "></span>{% endif %}
+    </a>
+</li>
+<li class="nav-item {% if page=="partner" %}active{% endif %}">
+    <a href="{{ path('partners') }}" class="nav-link  nav-toggle">
+        <i class="glyphicon glyphicon-briefcase"></i>
+        <span class="title">Partenaires</span>
+        {% if page=="partner" %}<span class="selected "></span>{% endif %}
+    </a>
+</li>
+<li class="nav-item {% if page=="document" %}active{% endif %}">
+    <a href="{{ path('documents') }}" class="nav-link  nav-toggle">
+        <i class="fa fa-file"></i>
+        <span class="title">Documents</span>
+        {% if page=="document" %}<span class="selected "></span>{% endif %}
+    </a>
+</li>
+
+<li class="nav-item {% if page=="promoter" or page=="notary" or page=="architect" or page=="master" or page=="control_office" or page=="thermal_office" or page=="trustee" or page=="agency"%}active open{% endif %}">
+    <a href="javascript:;" class="nav-link nav-toggle">
+        <i class="glyphicon glyphicon-wrench"></i>
+        <span class="title">Intervenants</span>
+        <span class="arrow {% if page=="promoter" or page=="notary" or page=="architect" or page=="master" or page=="control_office" or page=="thermal_office" or page=="trustee" or page=="agency" %}open{% endif %}"></span>
+    </a>
+    <ul class="sub-menu">
+        <li class="nav-item {% if page=="promoter" %}active open{% endif %}">
+            <a href="{{ path('promoters') }}" class="nav-link">
+                <i class="glyphicon glyphicon-euro"></i>
+                <span class="title">Promoteurs</span>
+                {% if page=="promoter" %}<span class="selected "></span>{% endif %}
+            </a>
+        </li>
+        <li class="nav-item {% if page=="notary" %}active open{% endif %}">
+            <a href="{{ path('notarys') }}" class="nav-link">
+                <i class="fa fa-pencil"></i>
+                <span class="title">Notaires</span>
+                {% if page=="notary" %}<span class="selected "></span>{% endif %}
+            </a>
+        </li>
+        <li class="nav-item {% if page=="architect" %}active open{% endif %}">
+            <a href="{{ path('architects') }}" class="nav-link">
+                <i class="icon-layers"></i>
+                <span class="title">Architectes</span>
+                {% if page=="architect" %}<span class="selected"></span>{% endif %}
+            </a>
+        </li>
+        <li class="nav-item {% if page=="master" %}active open{% endif %}">
+            <a href="{{ path('masters') }}" class="nav-link">
+                <i class="glyphicon glyphicon-wrench"></i>
+                <span class="title">Maitres d'oeuvre d'exécution</span>
+                {% if page=="master" %}<span class="selected "></span>{% endif %}
+            </a>
+        </li>
+        <li class="nav-item {% if page=="control_office" %}active open{% endif %}">
+            <a href="{{ path('control_offices') }}" class="nav-link">
+                <i class="icon-magnifier"></i>
+                <span class="title">Bureaux de contrôle</span>
+                {% if page=="control_office" %}<span class="selected"></span>{% endif %}
+            </a>
+        </li>
+        <li class="nav-item {% if page=="thermal_office" %}active open{% endif %}">
+            <a href="{{ path('thermal_offices') }}" class="nav-link">
+                <i class="icon-fire"></i>
+                <span class="title">Bureaux d'études thermiques</span>
+                {% if page=="thermal_office" %}<span class="selected "></span>{% endif %}
+            </a>
+        </li>
+        <li class="nav-item {% if page=="trustee" %}active open{% endif %}">
+            <a href="{{ path('trustees') }}" class="nav-link">
+                <i class="fa fa-key"></i>
+                <span class="title">Syndic</span>
+                {% if page=="trustee" %}<span class="selected"></span>{% endif %}
+            </a>
+        </li>
+        <li class="nav-item {% if page=="agency" %}active open{% endif %}">
+            <a href="{{ path('agencys') }}" class="nav-link  nav-toggle">
+                <i class="icon-settings"></i>
+                <span class="title">Gestionnaires</span>
+                {% if page=="agency" %}<span class="selected "></span>{% endif %}
+            </a>
+        </li>
+    </ul>
+</li>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+    {% include "MainBundle:LayoutComponents:meta.html.twig" %}
+    {% include "MainBundle:LayoutComponents:core_stylesheet.html.twig" %}
+    {% stylesheets
+    'bundles/main/assets/pages/css/login.css'
+    'bundles/main/assets/global/plugins/select2/css/select2.min.css'
+    'bundles/main/assets/global/plugins/select2/css/select2-bootstrap.min.css'
+    output='css/public.css'
+    filter='cssrewrite' %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+    {% block pageStylesheet %}{% endblock %}
+</head>
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+<body class="login">
+    <div class="logo">
+        {#<a href="{{ url('fos_user_security_login') }}"><img src="/img/logo_groupeflot.png" alt="" style="width:250px" /></a>#}
+    </div>
+    <div class="content">
+        {% block pageContent %}{% endblock %}
+    </div>
+    <div class="copyright"> {{ "now"|date('Y') }} &copy; <a href="http://www.groupeflot.fr/" style="color:#fff">Groupe FLOT</a></div>
+{% include "MainBundle:LayoutComponents:core_javascript.html.twig" %}
+    {% javascripts
+    'bundles/main/assets/global/plugins/backstretch/jquery.backstretch.min.js'
+    'bundles/main/assets/pages/scripts/login.js'
+    'bundles/main/assets/global/plugins/jquery-validation/js/jquery.validate.min.js'
+    'bundles/main/assets/global/plugins/jquery-validation/js/additional-methods.min.js'
+    'bundles/main/assets/global/plugins/select2/js/select2.full.min.js'
+    output='js/public.js' %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% block bottomJavascript %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,41 @@
+{% block form_row %}
+    {% spaceless %}
+        <div class="form-group form-md-line-input">
+            {{ form_label(form) }}
+            <div class="col-md-6">
+                {{ form_widget(form) }}
+                <div class="form-control-focus"></div>
+                <span class="help-block">{{ form_errors(form) }}</span>
+            </div>
+        </div>
+    {% endspaceless %}
+{% endblock form_row %}
+
+{% block email_widget %}
+    {% spaceless %}
+        {% set type = type|default('email') %}
+                <div class="input-icon">
+                    {{ block('form_widget_simple') }}
+                    <i class="fa fa-envelope"></i>
+                </div>
+                <span class="email_unique_error">Un utilisateur existe déjà avec cet email</span>
+    {% endspaceless %}
+{% endblock email_widget %}
+
+{% block text_widget %}
+        {{ form_widget(form) }}
+{% endblock text_widget %}
+
+{% block file_row %}
+    {% spaceless %}
+        <div class="form-group form-md-line-input">
+            {{ form_label(form) }}
+            <div class="col-md-6">
+                {% set type = type|default('text') %}
+                <input type="{{ type }}" class="btn" {{ block('widget_attributes') }} />
+                <div class="form-control-focus"></div>
+                <span class="help-block">{{ form_errors(form) }}</span>
+            </div>
+        </div>
+    {% endspaceless %}
+{% endblock file_row %}

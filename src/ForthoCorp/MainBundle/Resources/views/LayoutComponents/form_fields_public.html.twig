@@ -1,0 +1,31 @@
+{% block form_row %}
+    {% spaceless %}
+        <div class="form-group">
+            {{ form_errors(form) }}
+            <div>
+                {{ form_widget(form) }}
+            </div>
+
+        </div>
+    {% endspaceless %}
+{% endblock form_row %}
+
+{% block email_widget %}
+    {% spaceless %}
+        {% set type = type|default('email') %}
+        <div class="input-icon left">
+            <i class="icon-envelope"></i>
+            {{ block('form_widget_simple') }}
+        </div>
+        <button class="btn red disabled email_unique_error">Un utilisateur existe déjà avec cet email</button>
+    {% endspaceless %}
+{% endblock email_widget %}
+
+{% block text_widget %}
+
+    <div class="input-icon right">
+        <i class="fa"></i>
+        {{ form_widget(form) }}
+    </div>
+
+{% endblock text_widget %}

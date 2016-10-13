@@ -1,0 +1,142 @@
+/* here you can put your own css to customize and override the theme */
+h3.form-title{text-transform: uppercase}
+#forget-password{margin-top: 10px;float:right;font-size:12px}
+.page-footer{text-align: center}
+.page-footer .page-footer-inner{float:none;}
+.page-sidebar .page-sidebar-menu>li.active.open>a, .page-sidebar .page-sidebar-menu>li.active>a, .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu>li.active.open>a, .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu>li.active>a {background-color:#FF3804 }
+.page-sidebar .page-sidebar-menu>li.active.open>a:hover, .page-sidebar .page-sidebar-menu>li.active>a:hover, .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu>li.active.open>a:hover, .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu>li.active>a:hover {background-color:#FF3804 }
+/* -------------------------------------------------------------------------- */
+
+.form-horizontal{margin-bottom: 50px;}
+.form-horizontal.modal-form{margin-bottom: 0px !important;}
+
+.company-show-portlet-body{height:230px;}
+
+.company-show-map{height:215px;}
+
+.company-show-add-address{width:100%;height:100%;}
+
+.company-show-img-forbidden{width:auto;height:200px;display: block;margin-left: auto;margin-right: auto}
+
+.program-show-portlet-top{height:410px;}
+
+.program-show-portlet-bottom{height:375px;}
+
+.mt-element-list .list-todo.mt-list-container ul>.mt-list-item>.list-todo-item:after {
+    right: 100%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(47,53,59,0);
+    border-right-color: #E1E5EC;
+    border-width: 8px;
+    top: 18px;
+}
+
+.program-show-list-image{list-style: none; margin-left:0px;padding-left:0;}
+
+.program-show-container-image:hover .program-show-image-button{top:3px;}
+
+.program-show-container-image{display: inline-block; width:100px;height:100px;position:relative;overflow: hidden}
+
+.program-show-image{z-index:1;width:100px;height:100px;padding-right:1px;padding-left:1px;padding-top:3px;padding-bottom:3px;position:static;}
+
+.program-show-image-button{text-align: center; z-index:2;height:95px;width: 98px;line-height: 98px;margin-left:1px;margin-right:auto;background-color: rgba(0,0,0,0.3);position: absolute;top:102px;}
+
+.lot-show-portlet-top{height:400px;}
+
+.lot-show-portlet-bottom{height:375px;}
+
+
+.tasks-widget .task-list>li {padding:9px 0 !important;}
+.tasks-widget .task-list>li.listDocument {padding:6px 0 !important;}
+.tasks-widget .task-list>li>.checkboxListDoc{float:left; width:26px;font-size:11px;}
+.btn-icon-only-small {
+    height: 25px;
+    width: 25px;
+    text-align: center;
+    padding: 4px 0 !important;
+}
+
+.btn-xs{font-size: 12px !important; padding:4px 8px !important}
+
+.label-big {
+    height: 25px  !important;
+    width: 25px  !important;
+    text-transform: uppercase;
+    padding: 3px 4px 5px;
+    text-shadow: none!important;
+    color: #fff;
+    font-family: "Open Sans",sans-serif;
+    box-shadow: 0 1px 3px rgba(0,0,0,.1),0 1px 2px rgba(0,0,0,.18);
+    display: inline;
+    font-size: 1em;
+    vertical-align: baseline;
+    border-radius: .25em;
+    line-height: 1;
+    white-space: nowrap;
+    text-align: center;
+}
+
+
+.row-eq-height{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.bootstrap-switch-success{
+    background-color: #26C281 !important;
+}
+
+.bootstrap-switch-danger{
+    background-color: #E7505A !important;
+}
+
+.portlet.red .caption, .portlet.red .caption i, .portlet.red .portlet-body p{
+    color: white !important;
+}
+.page-sidebar-closed>.page-container>.page-sidebar-wrapper>.navbar-collapse>.page-logo{
+    display: none;
+}
+
+.input_checkbox{
+    margin-right: 0;
+    float:right;
+}
+
+.program-infos{
+    background-color: #fff;
+    padding:3px 10px;
+    border: 1px solid #cccccc;
+}
+
+.program-infos-row{
+    margin:10px 15px 15px 15px;
+}
+.image_lightbox_container{
+    vertical-align: middle;
+    position:relative;
+    display:inline-block;
+    width:30px;
+    height:30px;
+    margin-right: 5px;
+}
+.image_lightbox{
+    position:absolute;
+    z-index: 98;
+    height: 30px;
+    width: 30px;
+    -webkit-transition: height 0.5s, width 0.5s;
+    transition: height 0.5s, width 0.5s;
+}
+.image_lightbox:hover{
+    position:absolute;
+    z-index:999999999;
+    height: 300px;
+    width: auto;
+}

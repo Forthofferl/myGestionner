@@ -18,17 +18,20 @@
             <ul class="nav navbar-nav pull-right">
                 <li class="dropdown dropdown-user">
                     <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                        {% if app.user.avatar %}
-                            <img alt="" class="img-circle" src="/uploads/avatar/{{ app.user.avatar.filename }}.{{ app.user.avatar.extension }}" />
+                        {# {% if app.user.avatar %}
+                             <img alt="" class="img-circle" src="/uploads/avatar/{{ app.user.avatar.filename }}.{{ app.user.avatar.extension }}" />
                         {% else %}
                             <img alt="" class="img-circle" src="/img/default-avatar.jpg" />
                         {% endif %}
                         <span class="username username-hide-on-mobile"> {{ app.user.firstname }} </span>
+                        <i class="fa fa-angle-down"></i>#}
+                        <img alt="" class="img-circle" src="/img/default-avatar.jpg" />
+                        <span class="username username-hide-on-mobile"> test </span>
                         <i class="fa fa-angle-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-default">
                         <li>
-                            <a href="{{ path('user_profile', {'id': app.user.id}) }}">
+                            <a href="{#{{ path('user_profile', {'id': app.user.id}) }}#}">
                                 <i class="icon-user"></i> Mon profil </a>
                         </li>
                         <li>
@@ -36,7 +39,7 @@
                         </li>
                         <li class="divider"> </li>
                         <li>
-                            <a href="{{ path('fos_user_security_logout') }}">
+                            <a href="{#{{ path('fos_user_security_logout') }}#}">
                                 <i class="icon-key"></i> Déconnexion </a>
                         </li>
                     </ul>

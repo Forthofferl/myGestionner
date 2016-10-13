@@ -12,11 +12,12 @@
         <!-- DOC: Set data-keep-expand="true" to keep the submenues expanded -->
         <!-- DOC: Set data-auto-speed="200" to adjust the sub menu slide up/down speed -->
         <ul class="page-sidebar-menu  page-header-fixed " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200" style="padding-top: 20px">
-            {% if app.user.hasRole('ROLE_ADMIN') %}
+            {#{% if app.user.hasRole('ROLE_ADMIN') %}
                 {% include "ForthoCorpMainBundle:LayoutComponents:sidebar_admin.html.twig" %}
             {% elseif app.user.hasRole('ROLE_PARTNER') %}
                 {% include "ForthoCorpMainBundle:LayoutComponents:sidebar_partner.html.twig" %}
-            {% endif %}
+            {% endif %}#}
+            {% include "MainBundle:LayoutComponents:sidebar_admin.html.twig" %}
         </ul>
     </div>
 </div>

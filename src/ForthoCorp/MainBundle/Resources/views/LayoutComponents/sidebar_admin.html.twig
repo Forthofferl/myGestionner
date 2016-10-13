@@ -1,18 +1,18 @@
-<li class="nav-item start {% if page=="dashboard" %}active{% endif %} open">
-        <a href="{{ path('admin_dashboard') }}" class="nav-link nav-toggle">
+<li class="nav-item start {#{% if page=="dashboard" %}active{% endif %}#} open">
+        <a href="{{ path('main_homepage') }}" class="nav-link nav-toggle">
         <i class="fa fa-dashboard"></i>
         <span class="title">Tableau de bord</span>
-        {% if page=="dashboard" %}<span class="selected "></span>{% endif %}
+            {#{% if page=="dashboard" %}<span class="selected "></span>{% endif %}#}
     </a>
 </li>
-<li class="nav-item {% if page=="program" %}active{% endif %}">
-    <a href="{{ path('programs') }}" class="nav-link nav-toggle">
-        <i class="fa fa-building-o"></i>
-        <span class="title">Programmes</span>
-        {% if page=="program" %}<span class="selected "></span>{% endif %}
+<li class="nav-item {#{% if page=="program" %}active{% endif %}#}">
+    <a href="{{ path('user_homepage') }}" class="nav-link nav-toggle">
+        <i class="fa fa-user"></i>
+        <span class="title">Mon profil</span>
+        {#{% if page=="program" %}<span class="selected "></span>{% endif %}#}
     </a>
 </li>
-<li class="nav-item {% if page=="lot" %}active{% endif %}">
+{#<li class="nav-item {% if page=="lot" %}active{% endif %}">
     <a href="{{ path('lots') }}" class="nav-link nav-toggle">
         <i class="fa fa-home"></i>
         <span class="title">Lots</span>
@@ -98,4 +98,4 @@
             </a>
         </li>
     </ul>
-</li>
+</li>#}

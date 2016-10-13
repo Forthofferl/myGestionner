@@ -4,7 +4,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://symfony.com/schema/routing http://symfony.com/schema/routing/routing-1.0.xsd">
 
-    <route id="user_profil" path="/profil">
+    <route id="user_homepage" path="/home">
         <default key="_controller">UserBundle:Default:index</default>
     </route>
 </routes>

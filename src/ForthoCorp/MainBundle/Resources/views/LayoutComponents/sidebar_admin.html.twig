@@ -1,18 +1,18 @@
-<li class="nav-item start {#{% if page=="dashboard" %}active{% endif %}#} open">
-        <a href="{{ path('main_homepage') }}" class="nav-link nav-toggle">
+<li class="nav-item start {% if page=="dashboard" %}active{% endif %} open">
+        <a href="{{ path('admin_dashboard') }}" class="nav-link nav-toggle">
         <i class="fa fa-dashboard"></i>
         <span class="title">Tableau de bord</span>
-        {#{% if page=="dashboard" %}<span class="selected "></span>{% endif %}#}
+        {% if page=="dashboard" %}<span class="selected "></span>{% endif %}
     </a>
 </li>
-<li class="nav-item {#{% if page=="program" %}active{% endif %}#}">
-    <a href="{{ path('user_profil') }}" class="nav-link nav-toggle">
-        <i class="fa fa-user"></i>
-        <span class="title">Profil Utilisateur</span>
-        {#{% if page=="program" %}<span class="selected "></span>{% endif %}#}
+<li class="nav-item {% if page=="program" %}active{% endif %}">
+    <a href="{{ path('programs') }}" class="nav-link nav-toggle">
+        <i class="fa fa-building-o"></i>
+        <span class="title">Programmes</span>
+        {% if page=="program" %}<span class="selected "></span>{% endif %}
     </a>
 </li>
-{#<li class="nav-item {% if page=="lot" %}active{% endif %}">
+<li class="nav-item {% if page=="lot" %}active{% endif %}">
     <a href="{{ path('lots') }}" class="nav-link nav-toggle">
         <i class="fa fa-home"></i>
         <span class="title">Lots</span>
@@ -32,8 +32,8 @@
         <span class="title">Documents</span>
         {% if page=="document" %}<span class="selected "></span>{% endif %}
     </a>
-</li>#}
-{#
+</li>
+
 <li class="nav-item {% if page=="promoter" or page=="notary" or page=="architect" or page=="master" or page=="control_office" or page=="thermal_office" or page=="trustee" or page=="agency"%}active open{% endif %}">
     <a href="javascript:;" class="nav-link nav-toggle">
         <i class="glyphicon glyphicon-wrench"></i>
@@ -98,4 +98,4 @@
             </a>
         </li>
     </ul>
-</li>#}
+</li>

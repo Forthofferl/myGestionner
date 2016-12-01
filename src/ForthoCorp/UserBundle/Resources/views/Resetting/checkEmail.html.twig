@@ -1,0 +1,20 @@
+{% extends 'FLOTMainBundle:Layout:base_public.html.twig' %}
+{% block pageStylesheet %}
+{% endblock %}
+{% block pageContent %}
+        <!-- BEGIN LOGIN FORM -->
+        <!-- BEGIN REGISTRATION FORM -->
+        <form action="" class="login-form" >
+            <h3 class="form-title">Email envoyé</h3>
+           <p>Un email a été envoyé à l'adresse: {{ email }} afin de poursuivre la réinitialisation de votre mot de passe.</p>
+            <a href="{{ url('fos_user_security_login') }}" class="btn yellow-gold">Retour</a>
+        </form>
+{% endblock %}
+{% block bottomJavascript %}
+    {% javascripts
+    'bundles/flotmain/assets/global/plugins/backstretch/jquery.backstretch.min.js'
+    'bundles/flotmain/assets/pages/scripts/login.js'
+    output='js/check_email.js' %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}

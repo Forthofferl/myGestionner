@@ -1,0 +1,17 @@
+{% extends 'FLOTMainBundle:Layout:base_public.html.twig' %}
+{% block pageStylesheet %}
+{% endblock %}
+{% block pageContent %}
+        {% form_theme form 'FLOTMainBundle:LayoutComponents:form_fields_public.html.twig' %}
+        <form action="{{ path('fos_user_resetting_reset', {'token': token}) }}" id="form_reset" method="POST" class="fos_user_resetting_reset">
+            <h3 class="form-title">Nouveau mot de passe</h3>
+            <p>Merci de saisir votre nouveau mot de passe dans le formulaire ci-dessous.</p>
+            {% include "FLOTMainBundle:LayoutComponents:form_validation.html.twig" %}
+            {{ form_widget(form) }}
+            <div class="form-actions">
+                <button type="submit" class="btn blue-chambray"><i class="fa fa-check"></i> Réinitialiser</button>
+            </div>
+        </form>
+{% endblock %}
+{% block bottomJavascript %}
+{% endblock %}

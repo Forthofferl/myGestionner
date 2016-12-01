@@ -1,16 +1,57 @@
 <?xml version="1.0" ?>
 
 <container xmlns="http://symfony.com/schema/dic/services"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
-    <!--
+    <parameters>
+        <parameter key="flot.custom_logout.class">FLOT\UserBundle\Handler\CustomLogoutHandler</parameter>
+        <parameter key="fos_user.resetting.email.template">FOSUserBundle:Resetting:email.txt.twig</parameter>
+        <parameter key="fos_user.resetting.custom.template">FOSUserBundle:Resetting:email.html.twig</parameter>
+        <parameter key="fos_user.registration.confirmation.template">FOSUserBundle:Registration:email.txt.twig</parameter>
+        <parameter key="flot.user_manager.class">FLOT\UserBundle\Entity\Manager\UserManager</parameter>
+    </parameters>
+
     <services>
-        <service id="user.example" class="ForthoCorp\UserBundle\Example">
-            <argument type="service" id="service_id" />
-            <argument>plain_value</argument>
-            <argument>%parameter_name%</argument>
+
+        <service id="flot.custom_logout_handler" class="%flot.custom_logout.class%">
+            <argument type="service" id="router" />
+            <argument type="service" id="session" />
         </service>
+
+        <service id="flot_user.resetting.form.factory" class="FOS\UserBundle\Form\Factory\FormFactory">
+            <argument type="service" id="form.factory" />
+            <argument>%fos_user.resetting.form.name%</argument>
+            <argument>%fos_user.resetting.form.type%</argument>
+            <argument>%fos_user.resetting.form.validation_groups%</argument>
+        </service>
+
+        <service id="flot_user.resetting.form.type" class="FLOT\UserBundle\Form\Type\ResettingFormType">
+            <tag name="form.type" alias="fos_user_resetting" />
+            <argument>%fos_user.model.user.class%</argument>
+        </service>
+
+        <service id="flot_user.mailer.custom" class="FLOT\UserBundle\Mailer\Custom" public="false">
+            <argument type="service" id="mailer" />
+            <argument type="service" id="router" />
+            <argument type="service" id="templating" />
+            <argument type="collection">
+                <argument key="confirmation.template">%fos_user.registration.confirmation.template%</argument>
+                <argument key="resetting.template">%fos_user.resetting.custom.template%</argument>
+                <argument key="from_email" type="collection">
+                    <argument key="confirmation">%fos_user.registration.confirmation.from_email%</argument>
+                    <argument key="resetting">%fos_user.resetting.email.from_email%</argument>
+                </argument>
+            </argument>
+        </service>
+
+        <service id="flot.user_manager" class="%flot.user_manager.class%">
+            <argument type="service" id="doctrine.orm.entity_manager" />
+            <argument type="service" id="service_container" />
+            <argument type="service" id="fos_user.user_manager" />
+        </service>
+
     </services>
-    -->
+
+
 </container>

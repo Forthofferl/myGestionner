@@ -1,0 +1,10 @@
+{% extends 'FLOTMainBundle:Layout:base_public.html.twig' %}
+{% block pageStylesheet %}
+{% endblock %}
+{% block pageContent %}
+        {% block fos_user_content %}
+            {% include "FOSUserBundle:Resetting:request_content.html.twig" %}
+        {% endblock fos_user_content %}
+{% endblock %}
+{% block bottomJavascript %}
+{% endblock %}

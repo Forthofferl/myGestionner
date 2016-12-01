@@ -1,0 +1,10 @@
+{% extends 'FLOTMainBundle:Mail:base.html.twig' %}
+
+{% block emailContent %}
+    <p>Votre demande de réinitialisation de mot de passe a bien été prise en compte. Choisissez-en un nouveau en cliquant sur le bouton ci-dessous :</p>
+    <a href="{{ confirmationUrl }}" style="color:#ffffff;font-family:arial;font-size:17px;white-space:nowrap;display:block;background-color:#135592 !important;background-image:none!important;border:none;padding:0 10px;border-radius:none!important;min-height:40px;width:auto;line-height:40px;text-align:center;text-decoration:none" target="_blank">
+      <span style="color:#ffffff;font-family:arial;font-size:14px;white-space:nowrap;display:block">
+        RÉINITIALISER MON MOT DE PASSE
+      </span>
+    </a>
+{% endblock %}

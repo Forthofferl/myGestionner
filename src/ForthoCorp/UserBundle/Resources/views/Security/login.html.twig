@@ -1,0 +1,61 @@
+{% extends 'FLOTMainBundle:Layout:base_public.html.twig' %}
+{% block pageStylesheet %}
+{% endblock %}
+    {% block pageContent %}
+    <form action="{{ path("fos_user_security_check") }}" method="post" id="form_login" class="login-form" >
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}">
+        <h3 class="form-title">Connexion à l'intranet</h3>
+        <div class="alert alert-danger display-hide">
+            <button class="close" data-close="alert"></button>
+            <span> Merci de renseigner votre email ainsi que votre mot de passe. </span>
+        </div>
+        {% if error %}
+            <div class="alert alert-danger">
+                <button class="close" data-dismiss="alert"></button>
+                <span>{{ error.message|trans({'Bad credentials': 'Login ou mot de passe incorrect'}) }}</span>
+            </div>
+        {% endif %}
+        <div class="form-group">
+            <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+            <label class="control-label visible-ie8 visible-ie9">Votre email</label>
+            <div class="input-icon">
+                <i class="fa fa-user"></i>
+                <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Votre email" id="username" name="_username" /> </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label visible-ie8 visible-ie9">Votre mot de passe</label>
+            <div class="input-icon">
+                <i class="fa fa-lock"></i>
+                <input class="form-control placeholder-no-fix" type="password" autocomplete="off" placeholder="Votre mot de passe" id="password" name="_password" /> </div>
+        </div>
+        <div class="form-actions">
+            <label class="checkbox">
+                <input type="checkbox" id="remember_me" name="_remember_me" value="on" />Se souvenir de moi</label>
+            <button type="submit" class="btn blue-chambray pull-right"> Connexion </button>
+            <br>
+            <a href="javascript:;" id="forget-password" class="">Mot de passe oublié ?</a>
+        </div>
+    </form>
+    <form class="forget-form fos_user_resetting_request" id="forget-form" action="{{ path('fos_user_resetting_send_email') }}" method="POST">
+        <h3 class="form-title">Mot de passe oublié ?</h3>
+        <p>
+            Entrez votre email pour réinitialiser votre mot de passe.
+        </p>
+        <div class="form-group">
+            <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Email" name="username"/>
+        </div>
+        <div class="form-actions">
+            <button type="button" id="back-btn" class="btn yellow-gold">Annuler</button>
+            <button type="submit" class="btn blue-chambray pull-right"><i class="fa fa-check"></i> Réinitialiser</button>
+        </div>
+    </form>
+    {% endblock %}
+{% block bottomJavascript %}
+    {% javascripts
+    'bundles/flotmain/assets/global/plugins/jquery-validation/js/jquery.validate.min.js'
+    'bundles/flotmain/assets/global/plugins/jquery-validation/js/additional-methods.min.js'
+    'bundles/flotmain/assets/global/plugins/select2/js/select2.full.min.js'
+    output='js/login.js' %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
